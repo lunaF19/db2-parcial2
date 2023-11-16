@@ -1,0 +1,154 @@
+# Parcial II
+
+## Parte 1
+
+  Creación de Base de Datos y Documentos
+
+### Pregunta 1 (5 puntos)
+
+   Crea una nueva base de datos llamada "PeliculasSeries" en tu cluster de MongoDB Atlas. Utiliza Mongo Compass para verificar la creación exitosa de la base de datos.
+
+### Pregunta 2 (10 puntos)
+
+  Dentro de la base de datos "PeliculasSeries", crea una colección llamada "Peliculas" y otra llamada "Series". Inserta 5 documentos en cada colección con información relevante sobre películas y series.
+
+  **Estructura:**
+
+```JSON
+{
+  "titulo": "Blade Runner 2049",
+  "director": {
+    "nombre": "Denis Villeneuve",
+    "nacionalidad": "Canadiense"
+  },
+  "anio": 2017,
+  "genero": ["Ciencia ficción", "Thriller"],
+  "calificacion": 8.5,
+  "actores": [
+    {
+      "nombre": "Ryan Gosling",
+      "personaje": "Oficial K"
+    },
+    {
+      "nombre": "Harrison Ford",
+      "personaje": "Rick Deckard"
+    },
+    {
+      "nombre": "Ana de Armas",
+      "personaje": "Joi"
+    }
+  ],
+  "sinopsis": "En un futuro distópico, un blade runner descubre un secreto que podría sumir a la sociedad en el caos."
+}
+
+```
+
+## Parte 2
+
+  Consultas y Actualizaciones (Se debe utilizar el comando (función) de Mongo)
+
+### Pregunta 3 (10 puntos)
+
+  Escribe una consulta que muestre todas las películas en la colección "Peliculas" que tengan una calificación mayor a 8.0.
+
+  ```SHELL
+  use PeliculasSeries
+  db.Peliculas.find({"calificacion": { $gt: 8}})
+
+  ```
+
+### Pregunta 4 (10 puntos)
+
+  Actualiza uno de los documentos en la colección "Series", cambiando el año de lanzamiento a un año más reciente.
+
+  ```SHELL
+  use PeliculasSeries
+  db.Series.updateOne({ "titulo": "Stranger Things" }, { $set: { anio: 2020 } });
+
+  ```
+
+## Parte 3
+
+  Operaciones Avanzadas (Se debe utilizar el comando (función) de Mongo)
+
+### Pregunta 5 (15 puntos)
+
+  Agrega un nuevo campo llamado "Actores" a tres de los documentos en la colección "Peliculas". Este campo debe ser un array que contenga los nombres de al menos dos actores principales en cada película.
+  
+  ```SHELL
+  use PeliculasSeries
+
+  db.Peliculas.findAndModify({
+    query: { "titulo": "The Matrix" },
+    update: {
+      $set: {
+        Actores: db.Peliculas.find({ "titulo": "The Matrix" }, ["actores.nombre"])
+          .toArray()[0]
+          .actores.map((item) => item.nombre)
+      }
+    }
+  })
+  
+  db.Peliculas.findAndModify({
+    query: { "titulo": "The Dark Knight" },
+    update: {
+      $set: {
+        Actores: db.Peliculas.find({ "titulo": "The Dark Knight" }, ["actores.nombre"])
+          .toArray()[0]
+          .actores.map((item) => item.nombre)
+      }
+    }
+  })
+
+  db.Peliculas.findAndModify({
+    query: { "titulo": "Pulp Fiction" },
+    update: {
+      $set: {
+        Actores: db.Peliculas.find({ "titulo": "Pulp Fiction" }, ["actores.nombre"])
+          .toArray()[0]
+          .actores.map((item) => item.nombre)
+      }
+    }
+  })
+
+
+
+  ```
+
+### Pregunta 6 (15 puntos)
+
+  Realiza una consulta que muestre todas las series en las que participa un actor específico que elijas. Utiliza el operador adecuado para realizar esta consulta.
+
+  ```SHELL
+    db.Series.find({ 
+        "query": {
+            "actores.nombre": {
+              $text: { 
+                $search: "Millie Bobby Brown", 
+                $caseSensitive: false
+              } 
+            }
+        } 
+    })
+  
+  ```
+
+## Parte 4
+
+  Eliminación de Documentos
+
+### Pregunta 7 (10 puntos)
+
+  Elimina dos documentos de la colección "Peliculas" que tengan una calificación menor a 7.0.
+
+### Pregunta 8 (10 puntos)
+
+  Elimina una serie de la colección "Series" basándote en algún criterio que elijas.
+
+## Parte 5
+
+  Respaldo y Restauración
+
+### Pregunta 9 (10 puntos)
+
+  Realiza un respaldo de la base de datos "PeliculasSeries" en MongoDB Atlas. Describe los pasos que seguirías para restaurar esta base de datos en caso de pérdida de datos.

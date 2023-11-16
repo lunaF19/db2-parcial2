@@ -1,0 +1,157 @@
+[
+  {
+    "titulo": "Blade Runner 2049",
+    "director": {
+      "nombre": "Denis Villeneuve",
+      "nacionalidad": "Canadiense"
+    },
+    "anio": 2017,
+    "genero": ["Ciencia ficción", "Thriller"],
+    "calificacion": 8.5,
+    "actores": [
+      {
+        "nombre": "Ryan Gosling",
+        "personaje": "Oficial K"
+      },
+      {
+        "nombre": "Harrison Ford",
+        "personaje": "Rick Deckard"
+      },
+      {
+        "nombre": "Ana de Armas",
+        "personaje": "Joi"
+      }
+    ],
+    "sinopsis": "En un futuro distópico, un blade runner descubre un secreto que podría sumir a la sociedad en el caos."
+  },
+
+  {
+    "titulo": "Inception",
+    "director": {
+      "nombre": "Christopher Nolan",
+      "nacionalidad": "Británico"
+    },
+    "anio": 2010,
+    "genero": ["Acción", "Ciencia ficción"],
+    "calificacion": 8.8,
+    "actores": [
+      {
+        "nombre": "Leonardo DiCaprio",
+        "personaje": "Dom Cobb"
+      },
+      {
+        "nombre": "Joseph Gordon-Levitt",
+        "personaje": "Arthur"
+      },
+      {
+        "nombre": "Elliot Page",
+        "personaje": "Ariadne"
+      }
+    ],
+    "sinopsis": "Un ladrón especializado en el robo de secretos corporativos utiliza la invención de compartir sueños para llevar a cabo un trabajo final."
+  },
+
+  {
+    "titulo": "The Shawshank Redemption",
+    "director": {
+      "nombre": "Frank Darabont",
+      "nacionalidad": "Estadounidense"
+    },
+    "anio": 1994,
+    "genero": ["Drama"],
+    "calificacion": 9.3,
+    "actores": [
+      {
+        "nombre": "Tim Robbins",
+        "personaje": "Andy Dufresne"
+      },
+      {
+        "nombre": "Morgan Freeman",
+        "personaje": "Ellis Boyd 'Red' Redding"
+      },
+      {
+        "nombre": "Bob Gunton",
+        "personaje": "Warden Norton"
+      }
+    ],
+    "sinopsis": "Un banquero es condenado a cadena perpetua en la prisión de Shawshank, donde forma una inesperada amistad y encuentra la esperanza."
+  },
+
+  {
+    "titulo": "The Dark Knight",
+    "director": {
+      "nombre": "Christopher Nolan",
+      "nacionalidad": "Británico"
+    },
+    "anio": 2008,
+    "genero": ["Acción", "Crimen", "Drama"],
+    "calificacion": 9.0,
+    "actores": [
+      {
+        "nombre": "Christian Bale",
+        "personaje": "Bruce Wayne / Batman"
+      },
+      {
+        "nombre": "Heath Ledger",
+        "personaje": "Joker"
+      },
+      {
+        "nombre": "Aaron Eckhart",
+        "personaje": "Harvey Dent"
+      }
+    ],
+    "sinopsis": "Batman se enfrenta al crimen organizado de Gotham mientras el Joker desata el caos en la ciudad."
+  },
+
+  {
+    "titulo": "The Matrix",
+    "director": {
+      "nombre": "Lana Wachowski",
+      "nacionalidad": "Estadounidense"
+    },
+    "anio": 1999,
+    "genero": ["Acción", "Ciencia ficción"],
+    "calificacion": 8.7,
+    "actores": [
+      {
+        "nombre": "Keanu Reeves",
+        "personaje": "Neo"
+      },
+      {
+        "nombre": "Laurence Fishburne",
+        "personaje": "Morpheus"
+      },
+      {
+        "nombre": "Carrie-Anne Moss",
+        "personaje": "Trinity"
+      }
+    ],
+    "sinopsis": "Un hacker descubre la verdad sobre la realidad simulada en la que vive y se une a una rebelión para liberar a la humanidad de las máquinas."
+  },
+  
+  {
+    "titulo": "Pulp Fiction",
+    "director": {
+      "nombre": "Quentin Tarantino",
+      "nacionalidad": "Estadounidense"
+    },
+    "anio": 1994,
+    "genero": ["Crimen", "Drama"],
+    "calificacion": 8.9,
+    "actores": [
+      {
+        "nombre": "John Travolta",
+        "personaje": "Vincent Vega"
+      },
+      {
+        "nombre": "Samuel L. Jackson",
+        "personaje": "Jules Winnfield"
+      },
+      {
+        "nombre": "Uma Thurman",
+        "personaje": "Mia Wallace"
+      }
+    ],
+    "sinopsis": "Varias historias entrelazadas sobre criminales, boxeadores y gánsteres en Los Ángeles."
+  }
+]
