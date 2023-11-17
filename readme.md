@@ -75,6 +75,8 @@
 
   Agrega un nuevo campo llamado "Actores" a tres de los documentos en la colección "Peliculas". Este campo debe ser un array que contenga los nombres de al menos dos actores principales en cada película.
   
+  Agrega actores al documento de The Matrix:
+  
   ```SHELL
   use PeliculasSeries
 
@@ -87,7 +89,13 @@
           .actores.map((item) => item.nombre)
       }
     }
-  })
+  }) 
+  ```
+
+  Agrega actores al documento de The Dark Knight:
+  
+  ```SHELL
+  use PeliculasSeries
   
   db.Peliculas.findAndModify({
     query: { "titulo": "The Dark Knight" },
@@ -99,7 +107,13 @@
       }
     }
   })
+  ```
 
+  Agrega actores al documento de Pulp Fiction:
+  
+  ```SHELL
+  use PeliculasSeries
+  
   db.Peliculas.findAndModify({
     query: { "titulo": "Pulp Fiction" },
     update: {
@@ -110,26 +124,28 @@
       }
     }
   })
-
-
-
   ```
 
 ### Pregunta 6 (15 puntos)
 
   Realiza una consulta que muestre todas las series en las que participa un actor específico que elijas. Utiliza el operador adecuado para realizar esta consulta.
-
+  
   ```SHELL
-    db.Series.find({ 
-        "query": {
-            "actores.nombre": {
-              $text: { 
-                $search: "Millie Bobby Brown", 
-                $caseSensitive: false
-              } 
-            }
-        } 
-    })
+
+  db.Series.find(
+    [ { $match : { "actores.nombre" : "Millie" } } ]
+    );
+
+  db.Series.find({ 
+      "query": {
+          "actores.nombre": {
+            $text: { 
+              $search: "Millie Bobby Brown", 
+              $caseSensitive: false
+            } 
+          }
+      } 
+  })
   
   ```
 
