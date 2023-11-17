@@ -146,10 +146,27 @@
 
   Elimina dos documentos de la colección "Peliculas" que tengan una calificación menor a 7.0.
 
+  ```SHELL
+  use PeliculasSeries
+  db.Peliculas.deleteMany({
+    $and: [
+      {
+        _id: {
+          $in: db.Peliculas.find({ $and: [ { calificacion: { $lt: 7.0 } } ] }, ["_id"])
+          .limit(2)
+          .toArray()
+          .map((item) => item._id)
+        
+        }
+      }
+    ]
+  });
+  ```
+
 ### Pregunta 8 (10 puntos)
 
   Elimina una serie de la colección "Series" basándote en algún criterio que elijas.
-
+  
 ## Parte 5
 
   Respaldo y Restauración
