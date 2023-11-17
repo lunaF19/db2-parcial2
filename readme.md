@@ -166,7 +166,16 @@
 ### Pregunta 8 (10 puntos)
 
   Elimina una serie de la colección "Series" basándote en algún criterio que elijas.
-  
+
+  Se elimina la serie con el titulo "Breaking Bad":
+
+```SHELL
+  use PeliculasSeries
+  db.Series.deleteOne({ 
+    $and: [ { titulo : "Breaking Bad" } ]
+  });
+```
+
 ## Parte 5
 
   Respaldo y Restauración
