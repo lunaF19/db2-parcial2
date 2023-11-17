@@ -182,4 +182,16 @@
 
 ### Pregunta 9 (10 puntos)
 
-  Realiza un respaldo de la base de datos "PeliculasSeries" en MongoDB Atlas. Describe los pasos que seguirías para restaurar esta base de datos en caso de pérdida de datos.
+  Realiza un respaldo de la base de datos "PeliculasSeries" en MongoDB Atlas.
+  Describe los pasos que seguirías para restaurar esta base de datos en caso de pérdida de datos.
+
+  1. Seleccionar la base de datos a restaurar.
+  2. Seleccionar la opción "Restore".
+  3. Seleccionar el punto de restauración deseado.
+  4. Seleccionar la opción "Restore".
+  5. Esperar a que se restaure la base de datos.
+  6. Verificar que la base de datos se haya restaurado correctamente.
+  7. Listo.
+
+Nota: En las bases de datos gratis no se puede realizar respaldo ni restauración.
+![Free clouster no restore & no backup](./img/free_clouster_no_restore_no_backup.png)
