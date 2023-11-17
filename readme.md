@@ -129,23 +129,12 @@
 ### Pregunta 6 (15 puntos)
 
   Realiza una consulta que muestre todas las series en las que participa un actor específico que elijas. Utiliza el operador adecuado para realizar esta consulta.
+
+  Consulta de las series en las que participa Millie Bobby Brown:
   
   ```SHELL
-
-  db.Series.find(
-    [ { $match : { "actores.nombre" : "Millie" } } ]
-    );
-
-  db.Series.find({ 
-      "query": {
-          "actores.nombre": {
-            $text: { 
-              $search: "Millie Bobby Brown", 
-              $caseSensitive: false
-            } 
-          }
-      } 
-  })
+  use PeliculasSeries
+  db.Series.find({ $and: [{ "actores.nombre": "Millie Bobby Brown" }] });
   
   ```
 
